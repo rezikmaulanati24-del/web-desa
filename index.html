@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profil Desa Sukakersa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ================================
+   KEPEMIMPINAN DESA
+================================ */
+
+.leadership-card {
+    overflow: hidden;
+}
+
+.leadership-card h3 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* Ornamen judul */
+.title-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.title-decoration span {
+    width: 70px;
+    height: 2px;
+    background: #d4af37;
+}
+
+.title-decoration i {
+    color: #d4af37;
+    font-size: 22px;
+    font-style: normal;
+}
+
+/* Daftar pemimpin */
+.leadership-card .profile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Setiap pemimpin */
+.leader-item {
+    display: grid;
+    grid-template-columns: 55px 45px 1fr 1fr;
+    align-items: center;
+    gap: 15px;
+
+    padding: 14px 18px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+
+    transition: all 0.3s ease;
+}
+
+/* Efek ketika mouse diarahkan */
+.leader-item:hover {
+    transform: translateY(-3px);
+
+    background: rgba(255, 255, 255, 0.12);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon */
+.leader-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: #147346;
+
+    font-size: 23px;
+}
+
+/* Nomor */
+.leader-number {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #198754;
+
+    color: white;
+
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Nama */
+.leader-name {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* Periode */
+.leader-period {
+    padding-left: 20px;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+
+    font-size: 15px;
+
+    color: #e5e5e5;
+}
+
+/* ================================
+   RESPONSIVE HP
+================================ */
+
+@media (max-width: 768px) {
+
+    .leadership-card h3 {
+        font-size: 24px;
+    }
+
+    .leader-item {
+        grid-template-columns: 45px 38px 1fr;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .leader-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 19px;
+    }
+
+    .leader-number {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .leader-name {
+        font-size: 15px;
+    }
+
+    .leader-period {
+        grid-column: 3;
+
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+        padding-left: 0;
+        padding-top: 7px;
+
+        font-size: 13px;
+    }
+}
+    :root{
+      --primary:#0f766e;
+      --primary-dark:#115e59;
+      --secondary:#f59e0b;
+      --bg:#f8fafc;
+      --text:#0f172a;
+      --muted:#64748b;
+      --card:#ffffff;
+      --border:#e2e8f0;
+      --shadow:0 10px 30px rgba(15, 23, 42, .08);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Poppins',sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
+    }
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1200px,92%);margin:auto}
+
+    .topbar{
+      background:var(--primary-dark);
+      color:#fff;
+      font-size:.9rem;
+      padding:10px 0;
+    }
+    .topbar .wrap{
+      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center
+    }
+
+    header{
+      position:sticky;top:0;z-index:1000;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--border);
+    }
+    nav{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:16px 0;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;font-weight:700;
+    }
+    .logo{
+      width:46px;height:46px;border-radius:14px;
+      background:linear-gradient(135deg,var(--primary),#22c55e);
+      display:grid;place-items:center;color:#fff;font-weight:800;
+      box-shadow:var(--shadow);
+    }
+    .menu{
+      display:flex;gap:22px;flex-wrap:wrap;align-items:center;
+      font-weight:500;
+    }
+    .menu a{color:var(--muted)}
+    .menu a:hover{color:var(--primary)}
+    .btn{
+      display:inline-block;
+      background:var(--primary);
+      color:#fff;
+      padding:12px 18px;
+      border-radius:999px;
+      font-weight:600;
+      transition:.25s;
+      box-shadow:var(--shadow);
+    }
+    .btn:hover{background:var(--primary-dark);transform:translateY(-2px)}
+    .hamburger{
+      display:none;border:none;background:none;font-size:1.7rem;cursor:pointer
+    }
+
+    .hero{
+      background:
+        linear-gradient(rgba(15,118,110,.82),rgba(15,118,110,.82)),
+        url('C:\Users\rezik maulana\OneDrive\Pictures\Screenshots\Screenshot 2026-06-09 111151.png') center/cover;
+      color:#fff;
+      padding:120px 0 90px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:40px;
+      align-items:center;
+    }
+    .hero h1{
+      font-size:clamp(2rem,4vw,4.2rem);
+      line-height:1.1;
+      margin-bottom:18px;
+    }
+    .hero p{color:#e2e8f0;font-size:1.05rem;margin-bottom:26px;max-width:650px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+    .btn-outline{
+      display:inline-block;
+      padding:12px 18px;
+      border-radius:999px;
+      border:1.5px solid rgba(255,255,255,.8);
+      color:#fff;
+      font-weight:600;
+    }
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:26px;
+    }
+    .stat{
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:16px;
+      padding:16px;
+      text-align:center;
+      backdrop-filter:blur(6px);
+    }
+    .stat strong{display:block;font-size:1.5rem}
+    .hero-card{
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.2);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+    .hero-card img{
+      border-radius:18px;
+      height:320px;
+      width:100%;
+      object-fit:cover;
+    }
+
+    section{padding:84px 0}
+    .section-title{
+      text-align:center;
+      margin-bottom:36px;
+    }
+    .section-title h2{
+      font-size:2rem;
+      margin-bottom:10px;
+    }
+    .section-title p{color:var(--muted);max-width:700px;margin:auto}
+
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .about-card,.profile-card,.contact-card{padding:26px}
+    .about-list,.profile-list,.contact-list{
+      margin-top:18px;display:grid;gap:12px
+    }
+    .about-list li,.profile-list li,.contact-list li{
+      list-style:none;
+      display:flex;gap:10px;align-items:flex-start;
+      color:var(--muted)
+    }
+    .icon{
+      min-width:30px;height:30px;border-radius:10px;
+      background:#dcfce7;color:#166534;
+      display:grid;place-items:center;font-size:.9rem;font-weight:700;
+    }
+
+    .section-soft{background:#ecfeff}
+    .features{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+    .feature{
+      padding:24px;
+    }
+    .feature h3{margin:14px 0 8px}
+    .feature p{color:var(--muted)}
+    .feature .icon{
+      background:#dbeafe;color:#1d4ed8;
+      width:42px;height:42px;border-radius:14px;font-size:1.1rem;
+    }
+
+    .products{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+    .product img,.activity img,.gallery img{
+      width:100%;height:220px;object-fit:cover;border-radius:16px
+    }
+    .product,.activity{
+      padding:16px;
+    }
+    .product h3,.activity h3{margin:14px 0 8px}
+    .tag{
+      display:inline-block;
+      margin-top:10px;
+      font-size:.85rem;
+      padding:7px 12px;
+      border-radius:999px;
+      background:#fef3c7;
+      color:#92400e;
+      font-weight:600;
+    }
+    .price{
+      color:var(--primary);
+      font-weight:700;
+      margin-top:8px;
+    }
+
+    .activities{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+    .activity small{color:var(--muted)}
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+    .gallery img{height:180px}
+
+    .contact-wrap{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+    .contact-form{
+      padding:26px;
+    }
+    .contact-form input,
+    .contact-form textarea{
+      width:100%;
+      padding:14px 16px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      margin-bottom:14px;
+      font-family:inherit;
+      outline:none;
+      background:#fff;
+    }
+    .contact-form textarea{min-height:140px;resize:vertical}
+    .map{
+      border:0;
+      width:100%;
+      min-height:360px;
+      border-radius:18px;
+    }
+
+    footer{
+      background:#0f172a;
+      color:#cbd5e1;
+      padding:26px 0;
+      text-align:center;
+    }
+
+    @media (max-width: 992px){
+      .hero-grid,.grid-2,.features,.products,.activities,.gallery-grid,.contact-wrap{
+        grid-template-columns:1fr;
+      }
+      .hero-card img{height:260px}
+    }
+
+    @media (max-width: 768px){
+      .menu{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:14px;
+        padding-top:16px;
+      }
+      nav{flex-wrap:wrap}
+      .hamburger{display:block}
+      .menu.show{display:flex}
+      .stats{grid-template-columns:1fr}
+      .hero{padding-top:90px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container wrap">
+      <div>Selamat datang di Website Profil Desa</div>
+      <div>Telp: +62 812-3456-7890 | Email: desa@domain.id</div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#beranda" class="brand">
+          <div class="logo">D</div>
+          <div>
+            <div>Desa Sukakersa</div>
+            <small style="color:var(--muted);font-weight:500">Profil Desa Digital</small>
+          </div>
+        </a>
+
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+        <div class="menu" id="menu">
+          <a href="#beranda">Beranda</a>
+          <a href="#profil">Profil</a>
+          <a href="#potensi">Potensi</a>
+          <a href="#ekonomi">Ekonomi Desa</a>
+          <a href="#kegiatan">Kegiatan</a>
+          <a href="#galeri">Galeri Desa</a>
+          <a href="#infrastruktur">Infrastruktur Desa</a>
+          <a href="#kontak">Kontak</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="beranda">
+      <div class="container hero-grid">
+        <div>
+          <h1>Website Resmi Profil Desa Sukakersa</h1>
+          <p>
+            Media informasi desa yang menampilkan profil desa, potensi unggulan, produk UMKM,
+            kegiatan masyarakat, galeri dokumentasi, dan informasi kontak resmi dalam satu tempat.
+          </p>
+          <div class="hero-actions">
+            <a href="#profil" class="btn">Lihat Profil</a>
+            <a href="#kontak" class="btn-outline">Hubungi Kami</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>12</strong>
+              <span>Dusun</span>
+            </div>
+            <div class="stat">
+              <strong>28</strong>
+              <span>UMKM Aktif</span>
+            </div>
+            <div class="stat">
+              <strong>45+</strong>
+              <span>Kegiatan Tahunan</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+    <img src="images/Sawah Desa.webp" alt="Dokumentasi Acara Pemilihan 2026" width="800" height="600" loading="lazy">
+</div>
+      </div>
+    </section>
+
+    <section id="profil">
+      <div class="container">
+        <div class="section-title">
+          <h2>Profil Desa</h2>
+          <p>Informasi dasar tentang sejarah, visi, misi, dan gambaran umum desa.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card about-card">
+            <h3>Sejarah Desa Sukakersa</h3>
+            <p style="color:var(--muted);margin-top:10px">
+              Desa Sukakersa terbentuk sekitar tahun 1903 dan mempunyai sejarah terbentuknya yaitu pada zaman penjajahan belanda sukakersa merupakan nama kampung yang ada di parakansalak
+              desanya waktu itu adalah Desa parakansalak dan pada zaman itu sebutan salah satu tokoh yaitu lurah belang itu pun menjadi awal nama 
+              sukakersa sebagai desa di wilayah kecamatan kalapanunggal pemekaran dari desa parakansalak
+              
+            </p>
+
+            <ul class="about-list">
+              <li><span class="icon">1</span><span>Terbentuk dari semangat masyarakat untuk membangun wilayah yang mandiri.</span></li>
+              <li><span class="icon">2</span><span>Fokus pada pelayanan publik, pembangunan, dan pemberdayaan ekonomi warga.</span></li>
+              <li><span class="icon">3</span><span>Mengusung nilai kebersamaan, religius, dan inovatif.</span></li>
+            </ul>
+          </div>
+
+          <div class="card profile-card">
+            <h3>Visi & Misi</h3>
+            <div class="profile-list">
+              <li><span class="icon">V</span><span><strong>Visi:</strong>terwujudnya perubahan kecamatan parakansalak menuju masyarakat yang berakhlak mulia,produktif dan sejahtera </span></li>
+              <li><span class="icon">M</span><span><strong>Misi 1:</strong> Meningkatkan kualitas SDM yang berahlak mulia.</span></li>
+              <li><span class="icon">M</span><span><strong>Misi 2:</strong> Memantapkan kinerja pemerintah daerah.</span></li>
+              <li><span class="icon">M</span><span><strong>Misi 3:</strong> Menumbuhkan perekonomian daerah yang bertumpu pada sektor umum .</span></li>
+            </div>
+          </div>
+        </div>
+      </div>
+       <div class="card profile-card">
+    <h3>kepemimpinan Desa Sukakersa</h3>
+
+    <div class="profile-list">
+        ...
+    </div>
+</div>
+<div class="card profile-card leadership-card">
+
+    <h3>Kepemimpinan Desa Sukakersa</h3>
+
+    <div class="title-decoration">
+        <span></span>
+        <i>✦</i>
+        <span></span>
+    </div>
+
+    <div class="profile-list">
+
+        <div class="leader-item">
+            <span class="leader-icon">👤</span>
+            <span class="leader-number">1</span>
+            <div class="leader-name">
+                Lurah Belang
+            </div>
+            <div class="leader-period">
+                ... s/d Tahun 1923
+            </div>
+        </div>
+
+        <div class="leader-item">
+            <span class="leader-icon">👤</span>
+            <span class="leader-number">2</span>
+            <div class="leader-name">
+                Bapak Ardiwinata
+            </div>
+            <div class="leader-period">
+                Tahun 1923 s/d 1955
+            </div>
+        </div>
+
+        <div class="leader-item">
+            <span class="leader-icon">👤</span>
+            <span class="leader-number">3</span>
+            <div class="leader-name">
+                Bapak A. Suntoni
+            </div>
+            <div class="leader-period">
+                Tahun 1955 s/d 1969
+            </div>
+        </div>
+
+        <div class="leader-item">
+            <span class="leader-icon">👤</span>
+            <span class="leader-number">4</span>
+            <div class="leader-name">
+                Bapak M. Komarudin
+            </div>
+            <div class="leader-period">
+                Tahun 1969 s/d 1983
+            </div>
+        </div>
+
+        <div class="leader-item">
+            <span class="leader-icon">👤</span>
+            <span class="leader-number">5</span>
+            <div class="leader-name">
+                Bapak A. Baesuni
+            </div>
+            <div class="leader-period">
+                Tahun 1983 s/d 1994
+            </div>
+        </div>
+
+        <div class="leader-item">
+            <span class="leader-icon">👤</span>
+            <span class="leader-number">6</span>
+            <div class="leader-name">
+                Bapak Sumpena
+            </div>
+            <div class="leader-period">
+                Tahun 1994 s/d 1998
+            </div>
+        </div>
+
+        <div class="leader-item">
+            <span class="leader-icon">👤</span>
+            <span class="leader-number">7</span>
+            <div class="leader-name">
+                Bapak A. H. Sopandi
+            </div>
+            <div class="leader-period">
+                Tahun 1998 s/d 2007
+            </div>
+        </div>
+
+        <div class="leader-item">
+            <span class="leader-icon">👤</span>
+            <span class="leader-number">8</span>
+            <div class="leader-name">
+                Bapak Deden Deni Wahyudin, SE
+            </div>
+            <div class="leader-period">
+                Tahun 2007 s/d 2027
+            </div>
+        </div>
+
+    </div>
+
+</div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+    
+
+    <section id="potensi" class="section-soft">
+      <div class="container">
+        <div class="section-title">
+          <h2>Potensi Desa</h2>
+          <p>Keunggulan desa yang bisa dikembangkan untuk meningkatkan kesejahteraan masyarakat.</p>
+        </div>
+
+        <div class="features">
+          <div class="card feature">
+            <div class="icon">🌾</div>
+            <h3>Pertanian</h3>
+            <p>Lahan subur menghasilkan padi, sayuran, dan komoditas hortikultura unggulan.</p>
+          </div>
+          <div class="card feature">
+            <div class="icon">🐟</div>
+            <h3>Peternakan & Perikanan</h3>
+            <p>Masyarakat mengembangkan usaha ternak ayam, kambing, serta kolam ikan air tawar.</p>
+          </div>
+          <div class="card feature">
+            <div class="icon">🧵</div>
+            <h3>Kerajinan Lokal</h3>
+            <p>Produk kerajinan tangan berbahan alami menjadi identitas ekonomi kreatif desa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ekonomi">
+      <div class="container">
+        <div class="section-title">
+          <h2>Ekonomi Desa</h2>
+          <p>produk unggulan dari pelaku usaha kecil di desa.</p>
+        </div>
+
+        <div class="products">
+          <div class="card product">
+            <img src="https://images.unsplash.com/photo-1519657337289-077653f724ed?auto=format&fit=crop&w=900&q=80" alt="Kerajinan bola">
+            <h3>Home Industri</h3>
+            <p style="color:var(--muted)">produk produksi rumahan yang memiliki kualitas tinggi.</p>
+            <div class="price">Rp40.000 / pack</div>
+            <span class="tag">karya unggulan</span>
+          </div>
+
+          <div class="card product">
+            <img src="https://images.unsplash.com/photo-1465198442922-2dd6e5d9b57c?auto=format&fit=crop&w=900&q=80" alt="Pabrik Pilus">
+            <h3>Produk UMKM</h3>
+            <p style="color:var(--muted)">produk hasil produksi UMKM dengan kualitas dan bahan unggulan.</p>
+            <div class="price">Rp20.000 / pack</div>
+            <span class="tag">karya unggulan</span>
+          </div>
+
+          <div class="card product">
+            <img src="https://images.unsplash.com/photo-1523401154945-3a4463d65f9b?auto=format&fit=crop&w=900&q=80" alt="Anyaman bambu">
+            <h3>Anyaman Bambu</h3>
+            <p style="color:var(--muted)">Produk kerajinan ramah lingkungan untuk kebutuhan rumah tangga.</p>
+            <div class="price">Mulai Rp25.000</div>
+            <span class="tag">Kerajinan</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kegiatan" class="section-soft">
+      <div class="container">
+        <div class="section-title">
+          <h2>Kegiatan Desa</h2>
+          <p>Dokumentasi agenda pembangunan, sosial, dan pemberdayaan masyarakat.</p>
+        </div>
+
+        <div class="activities">
+          <div class="card activity">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80" alt="Gotong royong">
+            <h3>pertanian</h3>
+            <small>Jumat, 12 Juli 2026</small>
+            <p style="color:var(--muted);margin-top:8px">Warga bersama perangkat desa membersihkan lingkungan dan saluran air.</p>
+          </div>
+
+          <div class="card activity">
+            <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=900&q=80" alt="Pelatihan UMKM">
+            <h3> UMKM </h3>
+            <small>Senin, 15 Juli 2026</small>
+            <p style="color:var(--muted);margin-top:8px">Pelatihan pemasaran online untuk meningkatkan penjualan produk lokal.</p>
+          </div>
+
+          <div class="card activity">
+            <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=900&q=80" alt="Posyandu">
+            <h3>Produk unggulan desa</h3>
+            <small>Sabtu, 20 Juli 2026</small>
+            <p style="color:var(--muted);margin-top:8px">Kegiatan rutin pelayanan kesehatan untuk ibu dan anak di desa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeri">
+      <div class="container">
+        <div class="section-title">
+          <h2>Galeri Desa</h2>
+          <p>Beberapa dokumentasi visual yang memperlihatkan suasana dan aktivitas desa.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="card gallery"><img src="https://images.unsplash.com/photo-1500622944204-b135684e99fd?auto=format&fit=crop&w=900&q=80" alt="Galeri 1"></div>
+          <div class="card gallery"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80" alt="Galeri 2"></div>
+          <div class="card gallery"><img src="https://images.unsplash.com/photo-1504310688137-5f1d0b87f75f?auto=format&fit=crop&w=900&q=80" alt="Galeri 3"></div>
+          <div class="card gallery"><img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=900&q=80" alt="Galeri 4"></div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="infrastruktur">
+      <div class="container">
+        <div class="section-title">
+          <h2>Infrastruktur Desa</h2>
+          <p>Beberapa dokumentasi visual yang memperlihatkan suasana dan aktivitas desa.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="card gallery"><img src="https://images.unsplash.com/photo-1500622944204-b135684e99fd?auto=format&fit=crop&w=900&q=80" alt="Galeri 1"></div>
+          <div class="card gallery"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80" alt="Galeri 2"></div>
+          <div class="card gallery"><img src="https://images.unsplash.com/photo-1504310688137-5f1d0b87f75f?auto=format&fit=crop&w=900&q=80" alt="Galeri 3"></div>
+          <div class="card gallery"><img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=900&q=80" alt="Galeri 4"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  
+<section id="kontak" class="section-soft">
+      <div class="container">
+        <div class="section-title">
+          <h2>Kontak Desa</h2>
+          <p>Hubungi kantor desa untuk informasi, pelayanan, atau kerja sama.</p>
+        </div>
+
+        <div class="contact-wrap">
+          <div class="card contact-card">
+            <h3>Informasi Kontak</h3>
+            <ul class="contact-list">
+              <li><span class="icon">🏢</span><span>Kantor Desa Sukakersa, Kecamatan Parakansalak, Kabupaten Sukabumi.</span></li>
+              <li><span class="icon">📞</span><span>(021) 1234-5678</span></li>
+              <li><span class="icon">✉️</span><span>sukakersahebat@gmail.com</span></li>
+              <li><span class="icon">🕒</span><span>Senin - Jumat, 08.00 - 15.00 WIB</span></li>
+            </ul>
+
+            <div style="margin-top: 22px;">
+
+  <!-- Gambar lokasi -->
+  <img
+    src="gambar-lokasi.jpg"
+    alt="Lokasi"
+    style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px;"
+  >
+
+  <!-- Google Maps -->
+  <iframe
+    class="map"
+    src="https://maps.app.goo.gl/db6mBDjTR4uDzJKV8"
+    width="100%"
+    height="400"
+    style="border:0; margin-top:15px; border-radius:12px;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+
+</div>
+  
+
+          <div class="card contact-form">
+            <h3>Kirim Pesan</h3>
+            <form>
+              <input type="text" placeholder="Nama Anda" required>
+              <input type="email" placeholder="Email Anda" required>
+              <input type="text" placeholder="Subjek" required>
+              <textarea placeholder="Tulis pesan Anda..." required></textarea>
+              <button type="submit" class="btn" style="border:none;cursor:pointer">Kirim Pesan</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+    <div class="container">
+      <p>&copy; 2026 Website Profil Desa Sukakersa. Semua hak dilindungi.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(){
+      document.getElementById('menu').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
