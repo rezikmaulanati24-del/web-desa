@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -251,7 +252,7 @@
     .hero{
       background:
         linear-gradient(rgba(15,118,110,.82),rgba(15,118,110,.82)),
-        url('C:\Users\rezik maulana\OneDrive\Pictures\Screenshots\Screenshot 2026-06-09 111151.png') center/cover;
+        url('images/Sawah%20Desa%20.webp') center/cover;
       color:#fff;
       padding:120px 0 90px;
     }
@@ -394,7 +395,12 @@
       grid-template-columns:repeat(4,1fr);
       gap:14px;
     }
-    .gallery img{height:180px}
+    .gallery{margin:0;overflow:hidden}
+    .gallery img{height:180px;transition:transform .3s ease}
+    .gallery:hover img{transform:scale(1.04)}
+    .gallery figcaption{padding:12px 14px;font-size:.9rem;font-weight:600;color:var(--text)}
+    .infrastructure-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .infrastructure-grid .gallery img{height:210px}
 
     .contact-wrap{
       display:grid;
@@ -431,7 +437,7 @@
     }
 
     @media (max-width: 992px){
-      .hero-grid,.grid-2,.features,.products,.activities,.gallery-grid,.contact-wrap{
+      .hero-grid,.grid-2,.features,.products,.activities,.gallery-grid,.infrastructure-grid,.contact-wrap{
         grid-template-columns:1fr;
       }
       .hero-card img{height:260px}
@@ -452,6 +458,91 @@
       .stats{grid-template-columns:1fr}
       .hero{padding-top:90px}
     }
+    /* Penyempurnaan tampilan kartu dan daftar kepemimpinan */
+    :root{
+      --text:#29424a;
+      --muted:#71818a;
+      --border:#dce8e3;
+      --shadow:0 8px 24px rgba(30, 70, 60, .07);
+    }
+
+    .hero-card{
+      max-width:470px;
+      margin-left:auto;
+      padding:12px;
+      background:rgba(232, 255, 247, .16);
+      border-color:rgba(231, 255, 248, .32);
+      border-radius:22px;
+      box-shadow:0 14px 30px rgba(7, 70, 63, .14);
+    }
+    .hero-card img{height:300px;border-radius:15px}
+
+    .leadership-card{
+      padding:32px;
+      background:linear-gradient(145deg, #ffffff, #f7fbf8);
+      border-color:#dbe9e2;
+    }
+    .leadership-card h3{
+      color:#34564b;
+      font-size:clamp(1.4rem, 2.4vw, 1.8rem);
+      font-weight:600;
+      letter-spacing:-.02em;
+    }
+    .title-decoration{gap:10px;margin-bottom:24px}
+    .title-decoration span{width:44px;height:1px;background:#c9a34a}
+    .title-decoration i{font-size:16px;color:#c9a34a}
+    .leadership-card .profile-list{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:12px;
+      margin-top:0;
+    }
+    .leader-item{
+      grid-template-columns:38px minmax(0, 1fr) auto;
+      gap:12px;
+      min-height:72px;
+      padding:12px 14px;
+      background:#fff;
+      border:1px solid #e4eee9;
+      border-radius:12px;
+      box-shadow:0 3px 10px rgba(38, 77, 65, .035);
+    }
+    .leader-item:hover{
+      transform:translateY(-2px);
+      background:#fcfffd;
+      border-color:#bcd8ca;
+      box-shadow:0 9px 18px rgba(38, 77, 65, .09);
+    }
+    .leader-icon{display:none}
+    .leader-number{
+      width:36px;height:36px;
+      border-radius:10px;
+      background:#e6f3ec;
+      color:#39745b;
+      font-size:.85rem;
+      font-weight:600;
+    }
+    .leader-name{font-size:.95rem;font-weight:600;color:#3b5057}
+    .leader-period{
+      padding:5px 8px;
+      border:0;
+      border-radius:8px;
+      background:#f1f6f3;
+      color:#789087;
+      font-size:.78rem;
+      line-height:1.35;
+      text-align:right;
+      white-space:nowrap;
+    }
+
+    @media (max-width:768px){
+      .hero-card{max-width:100%;margin:0}
+      .hero-card img{height:240px}
+      .leadership-card{padding:22px 16px}
+      .leadership-card .profile-list{grid-template-columns:1fr;gap:10px}
+      .leader-item{grid-template-columns:36px minmax(0,1fr);gap:10px;min-height:64px}
+      .leader-period{grid-column:2;justify-self:start;text-align:left;white-space:normal}
+    }
   </style>
 </head>
 <body>
@@ -470,7 +561,6 @@
           <div class="logo">D</div>
           <div>
             <div>Desa Sukakersa</div>
-            <div>Tinggal update file iye doang</div>
             <small style="color:var(--muted);font-weight:500">Profil Desa Digital</small>
           </div>
         </a>
@@ -522,7 +612,7 @@
         </div>
 
         <div class="hero-card">
-    <img src="images/Sawah Desa.webp" alt="Dokumentasi Acara Pemilihan 2026" width="800" height="600" loading="lazy">
+    <img src="images/Sawah%20Desa%20.webp" alt="Hamparan sawah Desa Sukakersa" width="800" height="600" loading="lazy">
 </div>
       </div>
     </section>
@@ -561,15 +651,7 @@
             </div>
           </div>
         </div>
-      </div>
-       <div class="card profile-card">
-    <h3>kepemimpinan Desa Sukakersa</h3>
-
-    <div class="profile-list">
-        ...
-    </div>
-</div>
-<div class="card profile-card leadership-card">
+        <div class="card profile-card leadership-card" style="margin-top:28px">
 
     <h3>Kepemimpinan Desa Sukakersa</h3>
 
@@ -672,10 +754,6 @@
     </div>
 
 </div>
-              
-            </div>
-          </div>
-        </div>
       </div>
       
     </section>
@@ -717,24 +795,24 @@
 
         <div class="products">
           <div class="card product">
-            <img src="https://images.unsplash.com/photo-1519657337289-077653f724ed?auto=format&fit=crop&w=900&q=80" alt="Kerajinan bola">
-            <h3>Home Industri</h3>
+            <img src="images/Koperasi%20Merah%20Putih.webp" alt="Koperasi Merah Putih" loading="lazy">
+            <h3>Koperasi Merah Putih</h3>
             <p style="color:var(--muted)">produk produksi rumahan yang memiliki kualitas tinggi.</p>
             <div class="price">Rp40.000 / pack</div>
             <span class="tag">karya unggulan</span>
           </div>
 
           <div class="card product">
-            <img src="https://images.unsplash.com/photo-1465198442922-2dd6e5d9b57c?auto=format&fit=crop&w=900&q=80" alt="Pabrik Pilus">
-            <h3>Produk UMKM</h3>
+            <img src="images/Tanah%20Desa%20%28Lebaklarang%29.webp" alt="Tanah Desa Lebaklarang" loading="lazy">
+            <h3>Tanah Desa Lebaklarang</h3>
             <p style="color:var(--muted)">produk hasil produksi UMKM dengan kualitas dan bahan unggulan.</p>
             <div class="price">Rp20.000 / pack</div>
             <span class="tag">karya unggulan</span>
           </div>
 
           <div class="card product">
-            <img src="https://images.unsplash.com/photo-1523401154945-3a4463d65f9b?auto=format&fit=crop&w=900&q=80" alt="Anyaman bambu">
-            <h3>Anyaman Bambu</h3>
+            <img src="images/Tanah%20Desa%20%28Lembur%20Sawah%29.webp" alt="Tanah Desa Lembur Sawah" loading="lazy">
+            <h3>Tanah Desa Lembur Sawah</h3>
             <p style="color:var(--muted)">Produk kerajinan ramah lingkungan untuk kebutuhan rumah tangga.</p>
             <div class="price">Mulai Rp25.000</div>
             <span class="tag">Kerajinan</span>
@@ -752,22 +830,22 @@
 
         <div class="activities">
           <div class="card activity">
-            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80" alt="Gotong royong">
-            <h3>pertanian</h3>
+            <img src="images/Posyandu%20Melati.webp" alt="Posyandu Melati" loading="lazy">
+            <h3>Posyandu Melati</h3>
             <small>Jumat, 12 Juli 2026</small>
             <p style="color:var(--muted);margin-top:8px">Warga bersama perangkat desa membersihkan lingkungan dan saluran air.</p>
           </div>
 
           <div class="card activity">
-            <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=900&q=80" alt="Pelatihan UMKM">
-            <h3> UMKM </h3>
+            <img src="images/Sheva%20Sport%20Futsal.webp" alt="Sheva Sport Futsal" loading="lazy">
+            <h3>Olahraga Warga</h3>
             <small>Senin, 15 Juli 2026</small>
             <p style="color:var(--muted);margin-top:8px">Pelatihan pemasaran online untuk meningkatkan penjualan produk lokal.</p>
           </div>
 
           <div class="card activity">
-            <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=900&q=80" alt="Posyandu">
-            <h3>Produk unggulan desa</h3>
+            <img src="images/Yayasan%20Madinah%20Tunnajah.webp" alt="Yayasan Madinah Tunnajah" loading="lazy">
+            <h3>Pendidikan Keagamaan</h3>
             <small>Sabtu, 20 Juli 2026</small>
             <p style="color:var(--muted);margin-top:8px">Kegiatan rutin pelayanan kesehatan untuk ibu dan anak di desa.</p>
           </div>
@@ -783,10 +861,10 @@
         </div>
 
         <div class="gallery-grid">
-          <div class="card gallery"><img src="https://images.unsplash.com/photo-1500622944204-b135684e99fd?auto=format&fit=crop&w=900&q=80" alt="Galeri 1"></div>
-          <div class="card gallery"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80" alt="Galeri 2"></div>
-          <div class="card gallery"><img src="https://images.unsplash.com/photo-1504310688137-5f1d0b87f75f?auto=format&fit=crop&w=900&q=80" alt="Galeri 3"></div>
-          <div class="card gallery"><img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=900&q=80" alt="Galeri 4"></div>
+          <figure class="card gallery"><img src="images/Mesjid%20Jami%20Nurul%20Falah.webp" alt="Mesjid Jami Nurul Falah" loading="lazy"><figcaption>Mesjid Jami Nurul Falah</figcaption></figure>
+          <figure class="card gallery"><img src="images/Lapang%20Volly%20Rhaden%20Center.webp" alt="Lapang Volly Rhaden Center" loading="lazy"><figcaption>Lapang Volly Rhaden Center</figcaption></figure>
+          <figure class="card gallery"><img src="images/Lapang%20Bola%20Salagombong.webp" alt="Lapang Bola Salagombong" loading="lazy"><figcaption>Lapang Bola Salagombong</figcaption></figure>
+          <figure class="card gallery"><img src="images/TPU%20Cileuleuy.webp" alt="TPU Cileuleuy" loading="lazy"><figcaption>TPU Cileuleuy</figcaption></figure>
         </div>
       </div>
     </section>
@@ -799,11 +877,14 @@
           <p>Beberapa dokumentasi visual yang memperlihatkan suasana dan aktivitas desa.</p>
         </div>
 
-        <div class="gallery-grid">
-          <div class="card gallery"><img src="https://images.unsplash.com/photo-1500622944204-b135684e99fd?auto=format&fit=crop&w=900&q=80" alt="Galeri 1"></div>
-          <div class="card gallery"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80" alt="Galeri 2"></div>
-          <div class="card gallery"><img src="https://images.unsplash.com/photo-1504310688137-5f1d0b87f75f?auto=format&fit=crop&w=900&q=80" alt="Galeri 3"></div>
-          <div class="card gallery"><img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=900&q=80" alt="Galeri 4"></div>
+        <div class="infrastructure-grid">
+          <figure class="card gallery"><img src="images/kantor%20Balai%20Desa%20Sukakersa.webp" alt="Kantor Balai Desa Sukakersa" loading="lazy"><figcaption>Kantor Balai Desa Sukakersa</figcaption></figure>
+          <figure class="card gallery"><img src="images/MI%20Pasirbatok.webp" alt="MI Pasirbatok" loading="lazy"><figcaption>MI Pasirbatok</figcaption></figure>
+          <figure class="card gallery"><img src="images/MI%20Subulussalam%20Ciherang.webp" alt="MI Subulussalam Ciherang" loading="lazy"><figcaption>MI Subulussalam Ciherang</figcaption></figure>
+          <figure class="card gallery"><img src="images/MIS%20Al-Hikmah.webp" alt="MIS Al-Hikmah" loading="lazy"><figcaption>MIS Al-Hikmah</figcaption></figure>
+          <figure class="card gallery"><img src="images/SD%20Negeri%20Lebaklarang.webp" alt="SD Negeri Lebaklarang" loading="lazy"><figcaption>SD Negeri Lebaklarang</figcaption></figure>
+          <figure class="card gallery"><img src="images/SD%20Negeri%20Sukakersa.webp" alt="SD Negeri Sukakersa" loading="lazy"><figcaption>SD Negeri Sukakersa</figcaption></figure>
+          <figure class="card gallery"><img src="images/SMP%20IT%20Al-Hikmah.webp" alt="SMP IT Al-Hikmah" loading="lazy"><figcaption>SMP IT Al-Hikmah</figcaption></figure>
         </div>
       </div>
     </section>
@@ -827,29 +908,16 @@
               <li><span class="icon">🕒</span><span>Senin - Jumat, 08.00 - 15.00 WIB</span></li>
             </ul>
 
-            <div style="margin-top: 22px;">
-
-  <!-- Gambar lokasi -->
-  <img
-    src="gambar-lokasi.jpg"
-    alt="Lokasi"
-    style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px;"
-  >
-
-  <!-- Google Maps -->
-  <iframe
-    class="map"
-    src="https://maps.app.goo.gl/db6mBDjTR4uDzJKV8"
-    width="100%"
-    height="400"
-    style="border:0; margin-top:15px; border-radius:12px;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-
-</div>
-  
+            <iframe
+              class="map"
+              title="Peta lokasi Desa Sukakersa"
+              src="https://www.google.com/maps?q=Desa%20Sukakersa%2C%20Kecamatan%20Parakansalak%2C%20Kabupaten%20Sukabumi&output=embed"
+              style="margin-top:22px"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
 
           <div class="card contact-form">
             <h3>Kirim Pesan</h3>
